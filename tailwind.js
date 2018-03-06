@@ -197,6 +197,7 @@ module.exports = {
   fonts: {
     sans: [
       '-apple-system',
+      'Open Sans Condensed',
       'BlinkMacSystemFont',
       'Segoe UI',
       'Roboto',
@@ -227,6 +228,9 @@ module.exports = {
       'Liberation Mono',
       'Courier New',
       'monospace',
+    ],
+    body: [
+      'Open Sans Condensed',
     ],
   },
 

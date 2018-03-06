@@ -4,9 +4,13 @@ import { withSiteData } from 'react-static'
 import { css } from 'glamor'
 import glamorous from 'glamorous'
 
-import logoImg from '../logo.png'
+import logoImg from '../elysian_logo2.png'
 
 const LogoImage = glamorous.img({
+  maxWidth: '100%',
+})
+
+const HeaderImage = glamorous.img({
   maxWidth: '100%',
 })
 
@@ -17,14 +21,6 @@ const SectionC_Image = glamorous.img({
   maxWidth: '100%',
 })
 
-
-const Header = glamorous.div({
-  backgroundColor: '#444',
-  color: '#fff',
-  borderRadius: 5,
-  padding: 10,
-  fontSize: '150%',
-})
 
 const PageGrid = glamorous.div({
   margin: 'auto',
@@ -44,6 +40,23 @@ const PageGrid = glamorous.div({
     justifyItems:'center',
   },
 });
+
+
+const Header = glamorous.div({
+  backgroundColor: '#fff',
+  background: 'url(https://source.unsplash.com/gVx84BQjcwA)',
+  backgroundSize: 'cover',
+  color: '#ddd',
+  padding: '50px 0 10px 0',
+  textAlign: 'center',
+  fontSize: '110%',
+  position: 'relative',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '15em',
+  boxShadow: 'inset 0 0 200px rgba(0,0,0,0.9)',
+})
 
 const SectionA = glamorous.div({
   backgroundColor: 'grey',
@@ -68,8 +81,11 @@ export default withSiteData(() => (
   <PageGrid>
 
     <Header css={{ gridArea: 'header' }}>
-      <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
-      <LogoImage src={logoImg} alt="" />
+      <h1 style={{ textAlign: 'center' }}>Company Name</h1>
+      <HeaderImage
+        src=""
+        alt="" />
+      <p>Lorem ipsum dolor sit amet.</p>
     </Header>
 
     {/* <Box css={{ gridArea: 'sidebar' }}>Sidebar</Box> */}
