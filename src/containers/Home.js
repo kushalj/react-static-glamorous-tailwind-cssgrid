@@ -37,69 +37,66 @@ const PageGrid = glamorous.div({
     gridGap: 5,
     gridTemplateAreas: `
       "header header header"
-      "content content content"
+      "section-a section-a section-a"
+      "section-b section-b section-b"
+      "section-c section-c section-c"
     `,
+    justifyItems:'center',
   },
 });
 
 const SectionA = glamorous.div({
   backgroundColor: 'grey',
   '@supports (display: grid)': {
-    display: 'grid',
-    gridGap: 5,
-    // gridTemplateRows: ,
-    // gridTemplateAreas: `
-    //   "nav nav nav"
-    //   "header header header"
-    //   "content content content"
-    //   "footer  footer  footer"
-    // `,
   },
 })
 
 const SectionB = glamorous.div({
   backgroundColor: 'grey',
   '@supports (display: grid)': {
-    display: 'grid',
-    gridGap: 5,
   },
 })
 
 const SectionC = glamorous.div({
   backgroundColor: 'grey',
   '@supports (display: grid)': {
-    display: 'grid',
-    gridGap: 5,
   },
 })
 
 
 export default withSiteData(() => (
-  <div>
+  <PageGrid>
 
-      <Header css={{ gridArea: 'header' }}>
-        Header
-      </Header>
+    <Header css={{ gridArea: 'header' }}>
+      <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
+      <LogoImage src={logoImg} alt="" />
+    </Header>
 
-        {/* <Box css={{ gridArea: 'sidebar' }}>Sidebar</Box> */}
+    {/* <Box css={{ gridArea: 'sidebar' }}>Sidebar</Box> */}
 
-        {/* Section A */}
-        <SectionA css={ tw('mb-10px')}>
-          <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
-          <LogoImage src={logoImg} alt="" />
-        </SectionA>
+    {/* Section A */}
+    <SectionA css={{ margin: 2, gridArea: 'section-a' }}>
+      <h1 style={{ textAlign: 'center' }}>Summary</h1>
+      <LogoImage
+        src="https://source.unsplash.com/l090uFWoPaI/600x400"
+        alt="" />
+    </SectionA>
 
-        {/* Section B */}
-        <SectionB>
-          <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
-          <SectionB_Image src={logoImg} alt="" />
-        </SectionB>
+    {/* Section B */}
+    <SectionB css={{ margin: 2, gridArea: 'section-b' }}>
+      <h1 style={{ textAlign: 'center' }}>Remote</h1>
+      <SectionB_Image 
+        src="https://source.unsplash.com/UCZF1sXcejo/600x400"
+        alt="" />
+    </SectionB>
 
-        {/* Section C */}
-        <SectionC>
-          <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
-          <SectionC_Image src={logoImg} alt="" />
-        </SectionC>
-        
-  </div>
+    {/* Section C */}
+    <SectionC css={{ margin: 2, gridArea: 'section-c' }}>
+      <h1 style={{ textAlign: 'center' }}>Product</h1>
+      <SectionC_Image
+        src="https://source.unsplash.com/9SoCnyQmkzI/600x400"
+        alt="" />
+    </SectionC>
+
+  </PageGrid>
 ))
