@@ -61,6 +61,15 @@ const SectionA = glamorous.div({
   '@supports (display: grid)': {
     display: 'grid',
     gridGap: '20px',
+    gridTemplateColumns: '1fr',
+  },
+})
+
+const SectionContent = glamorous.div({
+  width: '100%',
+  '@supports (display: grid)': {
+    display: 'grid',
+    gridGap: '20px',
     gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
   },
 })
@@ -78,7 +87,6 @@ const SectionC = glamorous.div({
   width: '100%',
   '@supports (display: grid)': {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
   },
 })
 
@@ -99,33 +107,50 @@ export default withSiteData(() => (
 
     {/* <Box css={{ gridArea: 'sidebar' }}>Sidebar</Box> */}
 
+
     {/* Section A */}
     <SectionA css={{ margin: 0, gridArea: 'section-a' }}>
-      <h1 className={css(tw("text-center"))}>
+      <h2 className={css(tw("text-center"))}>
         What we do
-      </h1>
+      </h2>
+      <SectionContent className="">
         <LogoImage
           src="https://source.unsplash.com/o2TRWThve_I/600x400"
-          alt="" />
+          alt=""
+          className={css(tw("text-center"))}
+        />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nam, voluptatibus ipsa architecto est ab temporibus consequuntur corporis saepe unde?</p>
+      </SectionContent>
     </SectionA>
+
 
     {/* Section B */}
     <SectionB css={{ margin: 0, gridArea: 'section-b' }}>
-      <h1 style={{ textAlign: 'center' }}>How we work</h1>
-      <SectionB_Image 
-        src="https://source.unsplash.com/UCZF1sXcejo/600x400"
-        alt="" />
+      <h2 style={{ textAlign: 'center' }}>
+        How we work
+      </h2>
+
+      <SectionContent className="">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia ratione veritatis quibusdam quasi vero repellendus! Veniam numquam quo officiis?</p>
+        <SectionB_Image
+          src="https://source.unsplash.com/UCZF1sXcejo/600x400"
+          alt="" />
+      </SectionContent>
     </SectionB>
+
 
     {/* Section C */}
     <SectionC css={{ margin: 0, gridArea: 'section-c' }}>
-      <h1 style={{ textAlign: 'center' }}>What we make</h1>
-      <SectionC_Image
-        src="https://source.unsplash.com/9SoCnyQmkzI/600x400"
-        alt="" />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo optio unde laudantium tempora repellat officiis tenetur eveniet quis dignissimos. Quisquam?</p>
+      <h2 style={{ textAlign: 'center' }}>
+        What we make
+      </h2>
+
+      <SectionContent className="">
+        <SectionC_Image
+          src="https://source.unsplash.com/9SoCnyQmkzI/600x400"
+          alt="" />
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia ratione veritatis quibusdam quasi vero repellendus! Veniam numquam quo officiis?</p>
+      </SectionContent>
     </SectionC>
 
   </PageGrid>
