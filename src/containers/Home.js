@@ -110,9 +110,9 @@ export default withSiteData(() => (
 
     {/* Section A */}
     <SectionA css={{ margin: 0, gridArea: 'section-a' }}>
-      <h2 className={css(tw("text-center"))}>
+      <h3 className={css(tw("text-center"))}>
         What we do
-      </h2>
+      </h3>
       <SectionContent className="">
         <LogoImage
           src="https://source.unsplash.com/o2TRWThve_I/600x400"
@@ -126,9 +126,9 @@ export default withSiteData(() => (
 
     {/* Section B */}
     <SectionB css={{ margin: 0, gridArea: 'section-b' }}>
-      <h2 style={{ textAlign: 'center' }}>
+      <h3 style={{ textAlign: 'center' }}>
         How we work
-      </h2>
+      </h3>
 
       <SectionContent className="">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia ratione veritatis quibusdam quasi vero repellendus! Veniam numquam quo officiis?</p>
@@ -141,9 +141,9 @@ export default withSiteData(() => (
 
     {/* Section C */}
     <SectionC css={{ margin: 0, gridArea: 'section-c' }}>
-      <h2 style={{ textAlign: 'center' }}>
+      <h3 style={{ textAlign: 'center' }}>
         What we make
-      </h2>
+      </h3>
 
       <SectionContent className="">
         <SectionC_Image
