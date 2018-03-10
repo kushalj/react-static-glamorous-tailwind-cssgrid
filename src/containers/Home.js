@@ -10,9 +10,14 @@ const LogoImage = glamorous.img({
   maxWidth: '100%',
 })
 
+const SectionA_Image = glamorous.img({
+  maxWidth: '100%',
+})
+
 const SectionB_Image = glamorous.img({
   maxWidth: '100%',
 })
+
 const SectionC_Image = glamorous.img({
   maxWidth: '100%',
 })
@@ -24,14 +29,11 @@ const PageGrid = glamorous.div({
   color: '#444',
   // You can use @supports with glamor!
   // So you can use @supports with glamorous as well!
-  '@supports (display: grid)': {
+  '@supports(display: grid)': {
     display: 'grid',
-    gridGap: 2,
     gridTemplateAreas: `
       "header header header"
-      "section-a section-a section-a"
-      "section-b section-b section-b"
-      "section-c section-c section-c"
+      "sections sections sections"
     `,
     justifyItems:'center',
   },
@@ -53,15 +55,51 @@ const Header = glamorous.div({
   height: '15em',
   boxShadow: 'inset 0 0 200px rgba(0,0,0,0.9)',
   paddingBottom: '10px',
+  marginBottom: '20px',
+})
+
+const Sections = glamorous.div({
+  '@supports (display: grid)': {
+    display: 'grid',
+    gridGap: 2,
+    gridTemplateAreas: `
+      "header header header"
+      "section-a section-a section-a"
+      "section-b section-b section-b"
+      "section-c section-c section-c"
+    `,
+    justifyItems:'center',
+  },
 })
 
 const SectionA = glamorous.div({
   backgroundColor: 'white',
   width: '100%',
+  marginBottom: '20px',
   '@supports (display: grid)': {
     display: 'grid',
-    gridGap: '20px',
+    gridGap: '5px',
     gridTemplateColumns: '1fr',
+  },
+})
+
+const SectionB = glamorous.div({
+  backgroundColor: 'white',
+  width: '100%',
+  marginBottom: '20px',
+  '@supports (display: grid)': {
+    display: 'grid',
+    gridGap: '5px',
+  },
+})
+
+const SectionC = glamorous.div({
+  backgroundColor: 'white',
+  width: '100%',
+  marginBottom: '20px',
+  '@supports (display: grid)': {
+    display: 'grid',
+    gridGap: '5px',
   },
 })
 
@@ -69,24 +107,10 @@ const SectionContent = glamorous.div({
   width: '100%',
   '@supports (display: grid)': {
     display: 'grid',
-    gridGap: '20px',
+    gridGap: '25px',
+    justifyItems: 'center',
+    textAlign: 'center',
     gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-  },
-})
-
-const SectionB = glamorous.div({
-  backgroundColor: 'white',
-  width: '100%',
-  '@supports (display: grid)': {
-    display: 'grid',
-  },
-})
-
-const SectionC = glamorous.div({
-  backgroundColor: 'white',
-  width: '100%',
-  '@supports (display: grid)': {
-    display: 'grid',
   },
 })
 
@@ -107,17 +131,17 @@ export default withSiteData(() => (
 
     {/* <Box css={{ gridArea: 'sidebar' }}>Sidebar</Box> */}
 
-
-    {/* Section A */}
-    <SectionA css={{ margin: 0, gridArea: 'section-a' }}>
+<Sections className={css(tw("mx-4"), {gridArea: 'sections'} )}>
+    
+    <SectionA css={{ gridArea: 'section-a' }}>
       <h3 className={css(tw("text-center"))}>
-        What we do
+        Product Design
       </h3>
-      <SectionContent className="">
-        <LogoImage
+      <SectionContent className={css(tw(""))}>
+        <SectionA_Image
           src="https://source.unsplash.com/o2TRWThve_I/600x400"
           alt=""
-          className={css(tw("text-center"))}
+          className={css(tw("mx-4"))}
         />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nam, voluptatibus ipsa architecto est ab temporibus consequuntur corporis saepe unde?</p>
       </SectionContent>
@@ -125,33 +149,35 @@ export default withSiteData(() => (
 
 
     {/* Section B */}
-    <SectionB css={{ margin: 0, gridArea: 'section-b' }}>
-      <h3 style={{ textAlign: 'center' }}>
+    <SectionB css={{ gridArea: 'section-b' }}>
+      <h3 className={css(tw("text-center"))}>
         How we work
       </h3>
 
       <SectionContent className="">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia ratione veritatis quibusdam quasi vero repellendus! Veniam numquam quo officiis?</p>
         <SectionB_Image
-          src="https://source.unsplash.com/UCZF1sXcejo/600x400"
+          src="https://source.unsplash.com/9SoCnyQmkzI/600x400"
           alt="" />
       </SectionContent>
     </SectionB>
 
 
     {/* Section C */}
-    <SectionC css={{ margin: 0, gridArea: 'section-c' }}>
-      <h3 style={{ textAlign: 'center' }}>
+    <SectionC css={{ gridArea: 'section-c' }}>
+      <h3 className={css(tw("text-center"))}>
         What we make
       </h3>
 
       <SectionContent className="">
         <SectionC_Image
-          src="https://source.unsplash.com/9SoCnyQmkzI/600x400"
+          src="https://source.unsplash.com/UCZF1sXcejo/600x400"
           alt="" />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia ratione veritatis quibusdam quasi vero repellendus! Veniam numquam quo officiis?</p>
       </SectionContent>
     </SectionC>
+    </Sections>
+
 
   </PageGrid>
 ))

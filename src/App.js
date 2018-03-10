@@ -69,7 +69,7 @@ const Footer = glamorous(Box)(tw('bg-grey-darkest h-32'))
 
 const App = () => (
   <Router>
-      <Grid css={{ marginBottom: 0, marginTop: 0 }}>
+      <Grid>
 
       <Nav css={{ gridArea: 'nav' }}/>
 
@@ -79,7 +79,7 @@ const App = () => (
         </Content>
       </ContentBox>
 
-        <Footer css={{ gridArea: 'footer' }}>Footer</Footer>
+        <Footer css={{ gridArea: 'footer', marginTop: '30px' }}>Footer</Footer>
       </Grid>
   </Router>
 )
