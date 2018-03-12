@@ -45,7 +45,7 @@ const Header = glamorous.div({
   background: 'url(https://source.unsplash.com/gVx84BQjcwA)',
   backgroundSize: 'cover',
   color: '#ddd',
-  padding: '50px 0 10px 0',
+  padding: '120px 0 10px 0',
   textAlign: 'center',
   fontSize: '110%',
   position: 'relative',
@@ -75,6 +75,7 @@ const Sections = glamorous.div({
 const SectionA = glamorous.div({
   backgroundColor: 'white',
   width: '100%',
+  height: '400px',
   marginBottom: '20px',
   '@supports (display: grid)': {
     display: 'grid',
@@ -86,6 +87,7 @@ const SectionA = glamorous.div({
 const SectionB = glamorous.div({
   backgroundColor: 'white',
   width: '100%',
+  height: '400px',
   marginBottom: '20px',
   '@supports (display: grid)': {
     display: 'grid',
@@ -96,6 +98,7 @@ const SectionB = glamorous.div({
 const SectionC = glamorous.div({
   backgroundColor: 'white',
   width: '100%',
+  height: '400px',
   marginBottom: '20px',
   '@supports (display: grid)': {
     display: 'grid',
@@ -111,6 +114,7 @@ const SectionContent = glamorous.div({
     justifyItems: 'center',
     textAlign: 'center',
     gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    alignItems: 'center',
   },
 })
 
@@ -129,7 +133,7 @@ export default withSiteData(() => (
       <p className={css(tw("pt-4"))}>Lorem ipsum dolor sit amet.</p>
     </Header>
 
-    {/* <Box css={{ gridArea: 'sidebar' }}>Sidebar</Box> */}
+    {/* <Box css={{ gridArea: 'sxidebar' }}>Sidebar</Box> */}
 
 <Sections className={css(tw("mx-4"), {gridArea: 'sections'} )}>
     
@@ -143,7 +147,7 @@ export default withSiteData(() => (
           alt=""
           className={css(tw("mx-4"))}
         />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nam, voluptatibus ipsa architecto est ab temporibus consequuntur corporis saepe unde?</p>
+        <p className={css(tw(""))}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nam, voluptatibus ipsa architecto est ab temporibus consequuntur corporis saepe unde?</p>
       </SectionContent>
     </SectionA>
 
@@ -158,7 +162,9 @@ export default withSiteData(() => (
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia ratione veritatis quibusdam quasi vero repellendus! Veniam numquam quo officiis?</p>
         <SectionB_Image
           src="https://source.unsplash.com/9SoCnyQmkzI/600x400"
-          alt="" />
+          alt="" 
+          className={css(tw("mx-4"))}
+        />
       </SectionContent>
     </SectionB>
 
@@ -172,7 +178,9 @@ export default withSiteData(() => (
       <SectionContent className="">
         <SectionC_Image
           src="https://source.unsplash.com/UCZF1sXcejo/600x400"
-          alt="" />
+          alt="" 
+          className={css(tw("mx-4"))}
+        />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia ratione veritatis quibusdam quasi vero repellendus! Veniam numquam quo officiis?</p>
       </SectionContent>
     </SectionC>

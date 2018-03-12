@@ -6,6 +6,7 @@ import { hot } from 'react-hot-loader'
 //
 import Routes from 'react-static-routes'
 import Nav from './containers/Nav'
+import Footer from './containers/Footer'
 
 
 css.global('html, body', tw('font-sans font-light text-base m-0 p-0'))
@@ -52,7 +53,7 @@ const Box = glamorous.div({
   color: '#fff',
   borderRadius: 0,
   padding: 10,
-  fontSize: '150%',
+  fontSize: '110%',
 });
 
 const ContentBox = glamorous.div({
@@ -60,11 +61,12 @@ const ContentBox = glamorous.div({
   color: '#999',
   borderRadius: 0,
   padding: 0,
+  marginBottom: '40px',
   fontSize: '150%',
 });
 
 
-const Footer = glamorous(Box)(tw('bg-grey-darkest h-32'))
+// const Footer = glamorous(Box)(tw('bg-grey-darkest h-32'))
 
 
 const App = () => (
@@ -79,7 +81,7 @@ const App = () => (
         </Content>
       </ContentBox>
 
-        <Footer css={{ gridArea: 'footer', marginTop: '30px' }}>Footer</Footer>
+        <Footer css={{ gridArea: 'footer' }} />
       </Grid>
   </Router>
 )
