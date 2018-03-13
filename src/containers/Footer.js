@@ -8,6 +8,8 @@ import logoImg from '../elysian_logo2.png'
 
 const LogoImage = glamorous.img({
   maxWidth: '100%',
+  height: '150px',
+  marginBottom: '60px',
 })
 
 const  FooterSection = glamorous.div({

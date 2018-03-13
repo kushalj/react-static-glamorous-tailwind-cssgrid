@@ -75,7 +75,6 @@ const Sections = glamorous.div({
 const SectionA = glamorous.div({
   backgroundColor: 'white',
   width: '100%',
-  height: '400px',
   marginBottom: '20px',
   '@supports (display: grid)': {
     display: 'grid',
@@ -87,7 +86,6 @@ const SectionA = glamorous.div({
 const SectionB = glamorous.div({
   backgroundColor: 'white',
   width: '100%',
-  height: '400px',
   marginBottom: '20px',
   '@supports (display: grid)': {
     display: 'grid',
@@ -98,7 +96,6 @@ const SectionB = glamorous.div({
 const SectionC = glamorous.div({
   backgroundColor: 'white',
   width: '100%',
-  height: '400px',
   marginBottom: '20px',
   '@supports (display: grid)': {
     display: 'grid',
