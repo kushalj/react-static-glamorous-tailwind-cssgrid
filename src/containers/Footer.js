@@ -5,11 +5,25 @@ import { Router, Link } from 'react-static'
 import { Routes } from 'react-static-routes'
 //
 import logoImg from '../elysian_logo2.png'
+import envelopeSvg from '../../fonts/zondicons/envelope.svg'
+import phoneSvg from '../../fonts/zondicons/phone.svg'
+import networkSvg from '../../fonts/zondicons/network.svg'
+
+
 
 const LogoImage = glamorous.img({
   maxWidth: '100%',
   height: '150px',
   marginBottom: '60px',
+})
+
+const SvgIcon = glamorous.img({
+    width: '1.1em',
+    filter: 'invert(0.5) sepia(1) saturate(2) hue-rotate(120deg)',
+    paddingRight: '5px',
+    marginBottom: '8px',
+    height: "16px",
+    width: "16px",
 })
 
 const  FooterSection = glamorous.div({
@@ -60,20 +74,59 @@ export default () => (
                 </div>
 
                 <div className={css(tw("sm:w-1/4 h-auto"))}>
-                    <div className={css(tw("text-teal mb-2"))}>Orange</div>
+                    <div className={css(tw("flex align-end"))}>
+                        <SvgIcon 
+                            src={networkSvg}
+                        />
+                        <div className={css(tw("text-teal align-center"))}>Social</div>
+                    </div>
+
                     <ul className={css(tw("list-reset leading-normal"))}>
-                        <li className={css(tw("hover:text-teal text-grey"))}>One</li>
-                        <li className={css(tw("hover:text-teal text-grey"))}>Two</li>
-                        <li className={css(tw("hover:text-teal text-grey"))}>Three</li>
-                        <li className={css(tw("hover:text-teal text-grey"))}>Four</li>
-                        <li className={css(tw("hover:text-teal text-grey"))}>Five</li>
-                        <li className={css(tw("hover:text-teal text-grey"))}>Six</li>
-                        <li className={css(tw("hover:text-teal text-grey"))}>Seven</li>
-                        <li className={css(tw("hover:text-teal text-grey"))}>Eight</li>
+                        <li className={css(tw("hover:text-teal text-grey"))}>
+                            <div className={css(tw("flex align-end"))}>
+                                <SvgIcon
+                                    src='https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/twitter.svg'
+                                />
+                                <div className={css(tw("text-grey align-center"))}></div>
+                            </div>
+                        </li>
+                        <li className={css(tw("hover:text-teal text-grey"))}>
+                            <div className={css(tw("flex align-end"))}>
+                                <SvgIcon
+                                    src='https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/facebook.svg'
+                                />
+                                <div className={css(tw("text-grey align-center"))}></div>
+                            </div>
+                        </li>
+                        <li className={css(tw("hover:text-teal text-grey"))}>
+                            <div className={css(tw("flex align-end"))}>
+                                <SvgIcon
+                                    src='https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg'
+                                />
+                                <div className={css(tw("text-grey align-center"))}></div>
+                            </div>
+                        </li>
+                        <li className={css(tw("hover:text-teal text-grey"))}>
+                            <div className={css(tw("flex align-end"))}>
+                                <SvgIcon
+                                    src='https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg'
+                                />
+                                <div className={css(tw("text-grey align-center"))}></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div className={css(tw("sm:w-1/4 h-auto sm:mt-0 mt-8"))}>
-                    <div className={css(tw("text-blue mb-2"))}>Blue</div>
+                    <div className={css(tw("flex align-end"))}>
+
+                    <div className={css(tw("flex align-end"))}>
+                        <SvgIcon
+                            src={phoneSvg}
+                        />
+                        <div className={css(tw("text-blue align-center"))}>Contact</div>
+                    </div>
+
+                    </div>
                     <ul className={css(tw("list-reset leading-normal"))}>
                         <li className={css(tw("hover:text-blue text-grey"))}>One</li>
                         <li className={css(tw("hover:text-blue text-grey"))}>Two</li>
